@@ -225,7 +225,7 @@ bindsym $mod+n exec "termite -e ranger"
 bindsym $mod+i exec chromium
 bindsym $mod+Return exec termite
 bindsym $mod+q exec "termite -e htop"
-bindsym XF86WLAN exec "termite -e nmtui"
+bindsym $mod+shift+i exec "termite -e nmtui"
 bindsym XF86Display exec output.sh 
 
 # Redirect sound to headphones
