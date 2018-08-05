@@ -10,7 +10,7 @@ echo
 read -p "Do you wish to proceed? " -n 1 -r 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then 
-	cp ./config $HOME/.config/i3/config  
+	cp ./i3config $HOME/.config/i3/config  
 	cp ./scripts/output.sh /usr/bin/
 	echo
 fi 
