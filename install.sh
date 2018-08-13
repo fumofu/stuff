@@ -41,13 +41,13 @@ then
 	echo "Done."
 fi 
 
-# Installs scripts from scripts  
+# Installs scripts from ./scripts  
 install_scripts () {
 	cp .config $HOME/.config/  
 	echo "Configuration Complete."
 	echo 
 }
-# Installs configuration from .config 
+# Installs configuration from ./.config 
 install_configuration () {
  	cp ./scripts/*.sh /usr/bin
 	echo "Scripts installed."
