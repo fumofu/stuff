@@ -4,7 +4,7 @@ displays=$(xrandr | grep -w "connected" | awk '{print $1}')
 # Checks to see if input is empty, exits with error if true
 [[ "$displays" = "" ]] && exit 1
 chosen=$(echo "$displays"| dmenu -fn 'Droid Sans Mono-12' -i -b -p "Which Display?"| awk '{print $1}')
-position=$(echo -e "normal\nleft\nright\noff" | dmenu fn 'Droid Sans Mono-12' -i -b -p "$chosen:")
+position=$(echo -e "normal\nleft\nright\noff" | dmenu -fn 'Droid Sans Mono-12' -i -b -p "$chosen:")
 if [ "$position" = "" ]  
 then 
 	exit 1
@@ -19,4 +19,3 @@ else
 	exit 0 
 fi 
 
-#
