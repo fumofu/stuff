@@ -144,10 +144,9 @@ bar {
 	i3bar_command i3bar
 	position top 
 	status_command i3status 
-	font pango:monospace 11 
+	font pango:monospace 10
 	strip_workspace_numbers yes
 	output primary
-	tray_output primary
 	colors {
 		background $bg-color
 	    	separator #757575
@@ -180,16 +179,14 @@ bindsym $mod+Shift+space exec playerctl play-pause
 #
 # App shortcuts
 
-#bindsym $mod+w exec firefox
-bindsym $mod+w exec qutebrowser
-bindsym $mod+n exec thunar 
+bindsym $mod+w exec firefox 
+bindsym $mod+n exec "termite -e ranger"
 bindsym $mod+i exec chromium
 bindsym $mod+Return exec termite
 bindsym $mod+q exec "termite -e htop"
 bindsym $mod+shift+i exec "termite -e nmtui"
 bindsym $mod+c exec "termite -e calcurse"
 bindsym XF86Display exec output.sh 
-bindysm $mod+a exec "emacsclient -c"
 
 # Redirect sound to headphones
 #bindsym $mod+m exec "/usr/local/bin/switch-audio-port"

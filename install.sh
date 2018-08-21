@@ -36,24 +36,23 @@ then
 	if [[ $REPLY =~ 3 ]] 
 	then
 		install_programs
+		install_scripts
 	fi 
 	
 	echo "Done."
 fi 
-
 # Installs scripts from ./scripts  
 install_scripts () {
-	cp .config $HOME/.config/  
+	exec cp .config $HOME/.config/  
 	echo "Configuration Complete."
 	echo 
 }
 # Installs configuration from ./.config 
 install_configuration () {
- 	cp ./scripts/*.sh /usr/bin
+ 	exec cp ./scripts/*.sh /usr/bin
 	echo "Scripts installed."
 	echo
 }
-
 # Installs programs
 # In the future pacman will read from file
 install_programs () {
@@ -69,6 +68,11 @@ install_programs () {
 			makepkg -si 	
 		fi 
 	fi 
-	pacman -Syu && pacman -S i3-wm, dmenu, xrandr, chromium, firefox, x-org, nvim, emacs
+	pacman -Syu && pacman -S i3-gaps, dmenu, xrandr, chromium, firefox, x-org, nvim, emacs, xfce4-notifyd, tlp 
+	# Enables system services 
+	systemctl enable xfce4-notifyd 
+	tlp start
+	# Enables 
+	echo "EDITOR=nvim 
+	VISUAL=EMACS" >> .bashrc
 }
-
