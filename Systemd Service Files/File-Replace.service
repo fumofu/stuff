@@ -1,0 +1,10 @@
+#!/bin/sh
+[Unit]
+Description= Check if folder has been modified and move it to a location preconfigured location
+
+[Service]
+# WorkingDirectory=/where/ever
+ExecStart=FileReplace.sh
+
+[Install]
+WantedBy=multi-user.target
